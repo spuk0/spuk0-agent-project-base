@@ -11,6 +11,7 @@ Proyecto inicializado desde `spuk0-project-base`. Antes de implementar funcional
 La documentación está indexada en [docs/README.md](docs/README.md). Las fuentes principales son:
 
 - [Alcance del proyecto](docs/project.md)
+- [Perfiles de inicio](docs/project-profiles.md)
 - [Visión de producto](docs/product-vision.md)
 - [Arquitectura](docs/architecture.md)
 - [Desarrollo local](docs/development.md)
@@ -21,15 +22,27 @@ La documentación está indexada en [docs/README.md](docs/README.md). Las fuente
 - [Infraestructura](docs/infrastructure.md)
 - [Despliegue](docs/deploy.md)
 
-## Uso de esta plantilla
+## Uso recomendado con un agente
+
+La forma preferida de utilizar esta plantilla es pedirle al agente que prepare el proyecto y presentar para revisión solamente las decisiones que afecten negocio o código. Un pedido inicial puede ser:
+
+> Usá `spuk0-project-base` para iniciar este proyecto. Elegí y justificá uno de sus perfiles, ejecutá el inicializador, completá la documentación mínima con evidencia y consultame únicamente las decisiones de negocio o código que cambien el producto.
+
+El agente deberá generar o clonar el repositorio, ejecutar el script, completar el checklist, proponer el primer objetivo y mantener un solo plan activo. Crear ramas, commits, remotos o pushes seguirá requiriendo el alcance y las autorizaciones correspondientes.
+
+## Uso manual
 
 En una copia nueva, ejecutar:
 
 ```powershell
-.\scripts\initialize.ps1 -ProjectName "Mi proyecto" -ProjectSlug "mi-proyecto" -Description "Descripción breve"
+.\scripts\initialize.ps1 `
+  -ProjectName "Mi proyecto" `
+  -ProjectSlug "mi-proyecto" `
+  -Description "Descripción breve" `
+  -Profile "lean-mvp"
 ```
 
-El script reemplaza los marcadores de identidad en la documentación. Después, revisar y completar los campos pendientes; nunca publicar secretos, rutas personales ni detalles privados de producción.
+Los perfiles disponibles son `lean-mvp`, `product-mvp` y `client-project`; están explicados en [docs/project-profiles.md](docs/project-profiles.md). El script reemplaza los marcadores de identidad en la documentación. Después, revisar y completar los campos pendientes; nunca publicar secretos, rutas personales ni detalles privados de producción.
 
 ## Ramas
 

@@ -12,6 +12,9 @@ param(
     [ValidateNotNullOrEmpty()]
     [string]$Description,
 
+    [ValidateSet('lean-mvp', 'product-mvp', 'client-project')]
+    [string]$Profile = 'lean-mvp',
+
     [ValidatePattern('^\d{4}-\d{2}-\d{2}$')]
     [string]$Date = (Get-Date -Format 'yyyy-MM-dd')
 )
@@ -23,6 +26,7 @@ $replacements = [ordered]@{
     '{{PROJECT_NAME}}' = $ProjectName
     '{{PROJECT_SLUG}}' = $ProjectSlug
     '{{PROJECT_DESCRIPTION}}' = $Description
+    '{{PROJECT_PROFILE}}' = $Profile
     '{{DATE}}' = $Date
 }
 
@@ -49,11 +53,11 @@ foreach ($file in $files) {
 $remaining = Get-ChildItem -LiteralPath $repositoryRoot -Recurse -File | Where-Object {
     $_.FullName -ne $thisScript -and
     $_.FullName -notmatch '[\\/]\.git[\\/]'
-} | Select-String -Pattern '{{PROJECT_NAME}}|{{PROJECT_SLUG}}|{{PROJECT_DESCRIPTION}}'
+} | Select-String -Pattern '{{PROJECT_NAME}}|{{PROJECT_SLUG}}|{{PROJECT_DESCRIPTION}}|{{PROJECT_PROFILE}}'
 
 if ($remaining) {
     throw 'La inicialización terminó con marcadores de identidad sin resolver.'
 }
 
-Write-Output "Proyecto inicializado: $ProjectName ($ProjectSlug)."
+Write-Output "Proyecto inicializado: $ProjectName ($ProjectSlug), perfil $Profile."
 Write-Output 'Siguiente paso: completar docs/checklists/new-project.md y revisar AGENTS.md.'

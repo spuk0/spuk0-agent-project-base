@@ -5,6 +5,7 @@
 - Nombre: **{{PROJECT_NAME}}**
 - Slug: `{{PROJECT_SLUG}}`
 - Descripción: {{PROJECT_DESCRIPTION}}
+- Perfil inicial: `{{PROJECT_PROFILE}}`
 - Documentación inicializada: {{DATE}}
 
 ## Problema

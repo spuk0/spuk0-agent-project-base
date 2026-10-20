@@ -7,6 +7,7 @@ This file is the source of truth for coding agents working on **{{PROJECT_NAME}}
 - Project overview and verified commands: [`README.md`](README.md).
 - Documentation index: [`docs/README.md`](docs/README.md).
 - Product scope and actors: [`docs/project.md`](docs/project.md).
+- Project profiles and architecture-sizing guidance: [`docs/project-profiles.md`](docs/project-profiles.md).
 - Architecture and dependency boundaries: [`docs/architecture.md`](docs/architecture.md).
 - Local development and configuration: [`docs/development.md`](docs/development.md).
 - Feature states and acceptance criteria: [`docs/features/README.md`](docs/features/README.md).
@@ -17,6 +18,14 @@ This file is the source of truth for coding agents working on **{{PROJECT_NAME}}
 - Generic deployment contract: [`docs/deploy.md`](docs/deploy.md). Keep real environment details private.
 
 Private or ignored documentation may add local context, but mandatory build, architecture, testing, and contribution rules must never depend on it.
+
+## Initializing a project from this template
+
+- If project identity markers remain unresolved, select a profile from `docs/project-profiles.md` and run `scripts/initialize.ps1` before implementation.
+- Prefer agent-led initialization: gather the minimum product context, propose a profile with reasons, execute the mechanical setup, and ask the user only about decisions that materially change business behavior or code.
+- Do not assume Clean Architecture. Use the selected profile and documented complexity signals to choose the smallest architecture that preserves necessary boundaries.
+- Complete `docs/checklists/new-project.md`, register the first objective and feature, and keep one active plan.
+- Repository creation, branch changes, commits, remotes, pushes, and external publication remain subject to the user's authorization.
 
 ## Git and publishing
 

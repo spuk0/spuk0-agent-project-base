@@ -5,6 +5,7 @@ Este directorio separa la realidad verificada, la intención de producto, los pl
 | Documento | Propósito |
 |---|---|
 | [project.md](project.md) | Alcance actual, actores, términos y exclusiones |
+| [project-profiles.md](project-profiles.md) | Perfiles de inicio y criterio para dimensionar arquitectura |
 | [product-vision.md](product-vision.md) | Dirección y contexto de roadmap |
 | [architecture.md](architecture.md) | Límites técnicos y estructura verificada |
 | [development.md](development.md) | Flujo local y comandos reproducibles |

@@ -2,7 +2,8 @@
 
 ## Identidad y alcance
 
-- [ ] Ejecutar `scripts/initialize.ps1` y confirmar que no queden marcadores `{{...}}` fuera de las plantillas.
+- [ ] Preferentemente, pedir al agente que elija y justifique un perfil, ejecute `scripts/initialize.ps1` y confirme que no queden marcadores `{{...}}` fuera de las plantillas.
+- [ ] Revisar la elección entre `lean-mvp`, `product-mvp` y `client-project` usando [project-profiles.md](../project-profiles.md).
 - [ ] Definir problema, actores, alcance actual, exclusiones y vocabulario compartido.
 - [ ] Separar el primer resultado útil del roadmap a largo plazo.
 
@@ -27,5 +28,6 @@
 ## Arquitectura y operación
 
 - [ ] Documentar límites de dependencias antes de agregar referencias entre módulos.
+- [ ] Adoptar la arquitectura más pequeña compatible con los riesgos reales; no asumir Clean Architecture por defecto.
 - [ ] Decidir autenticación, autorización, persistencia e integraciones únicamente cuando una feature las requiera.
 - [ ] Diferir proveedor y topología de producción hasta preparar la publicación, salvo que el código dependa de ellos.
